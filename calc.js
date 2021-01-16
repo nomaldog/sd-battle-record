@@ -14,6 +14,7 @@ $(document).change(function() {
 function SaveLocalStorage()
 {
   let save_list = {};
+  save_list["my_class"] = document.getElementById("my_class").value;
   for (let i = 0; i <= 7; i++) {
     save_list["input_win" + i] = document.getElementById("input_win" + i).value;
     save_list["input_lose" + i] = document.getElementById("input_lose" + i).value;
