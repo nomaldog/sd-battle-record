@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Shadowverse Battle Record</title>
+
+    <!-- Bootstrap Default -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Bootstrap Default -->
+
+    <script src="calc.js?version=0"></script>
+    <link rel="stylesheet" href="style.css?version=0">
+
+  </head>
+  <body>
+    <div id="main_container" class="container container-fluid">
+      <nav id="headnav" class="navbar navbar-expand-sm navbar-dark">
+          <a href="#" class="navbar-brand">Shadowverse Battle Record</a>
+      </nav>
+
+      <main role="main" class="container">
+        <div class="form-group">
+          <label>【自分のクラス】
+            <select id="my_class" class="form-control">
+              <option value="エルフ">エルフ</option>
+              <option value="ロイヤル">ロイヤル</option>
+              <option value="ウィッチ">ウィッチ</option>
+              <option value="ドラゴン">ドラゴン</option>
+              <option value="ネクロマンサー">ネクロマンサー</option>
+              <option value="ヴァンパイア">ヴァンパイア</option>
+              <option value="ビショップ">ビショップ</option>
+              <option value="ネメシス">ネメシス</option>
+            </select>
+          </label>
+          <button type="button" class="btn btn-primary" onclick="AllClear();">CLEAR</button>
+
+          <div id="result_message"></div>
+        </div>
+
+        <table id="result_table" class="table table-bordered m-1">
+          <thead>
+            <tr>
+              <th>対戦相手</th>
+              <th>勝敗ボタン</th>
+              <th>勝ち</th>
+              <th>負け</th>
+              <th>勝率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="tr0">
+              <td id="class0">エルフ</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(0,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(0,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win0"></td>
+              <td><input type="number" id ="input_lose0"></td>
+              <td id="rate0">None</td>
+            </tr>
+            <tr id="tr1">
+              <td id="class1">ロイヤル</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(1,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(1,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win1"></td>
+              <td><input type="number" id ="input_lose1"></td>
+              <td id="rate1">None</td>
+            </tr>
+            <tr id="tr2">
+              <td id="class2">ウィッチ</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(2,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(2,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win2"></td>
+              <td><input type="number" id ="input_lose2"></td>
+              <td id="rate2">None</td>
+            </tr>
+            <tr id="tr3">
+              <td id="class3">ドラゴン</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(3,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(3,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win3"></td>
+              <td><input type="number" id ="input_lose3"></td>
+              <td id="rate3">None</td>
+            </tr>
+            <tr id="tr4">
+              <td id="class4">ネクロマンサー</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(4,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(4,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win4"></td>
+              <td><input type="number" id ="input_lose4"></td>
+              <td id="rate4">None</td>
+            </tr>
+            <tr id="tr5">
+              <td id="class5">ヴァンパイア</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(5,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(5,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win5"></td>
+              <td><input type="number" id ="input_lose5"></td>
+              <td id="rate5">None</td>
+            </tr>
+            <tr id="tr6">
+              <td id="class6">ビショップ</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(6,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(6,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win6"></td>
+              <td><input type="number" id ="input_lose6"></td>
+              <td id="rate6">None</td>
+            </tr>
+            <tr id="tr7">
+              <td id="class7">ネメシス</td>
+              <td>
+                <button type="button" class="btn btn-success" onclick="AddBattleRecord(7,true );">WIN</button>
+                <button type="button" class="btn btn-danger" onclick="AddBattleRecord(7,false);">LOSE</button>
+              </td>
+              <td><input type="number" id ="input_win7"></td>
+              <td><input type="number" id ="input_lose7"></td>
+              <td id="rate7">None</td>
+            </tr>
+            <tr id="tr_total">
+              <td>合計</td>
+              <td>-</td>
+              <td id="total_win">0</td>
+              <td id="total_lose">0</td>
+              <td id="total_rate">None</td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="export" type="button" class="btn btn-primary">Export CSV</button>
+        <div>
+          <div><a href="https://twitter.com/waifu_dog">Twitter@waifu_dog</a></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

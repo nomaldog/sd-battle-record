@@ -1,0 +1,17 @@
+div#main_container{
+  background-color:RGB(179,227,250);
+}
+nav#headnav{
+  background-color:RGB(19,37,60);
+}
+body{
+  background-color:#EEE;
+}
+thead{
+  background-color:RGB(19,37,60);
+  color:#FFF;
+}
+tbody{
+  background-color:#FFF;
+  color:#000;
+}
