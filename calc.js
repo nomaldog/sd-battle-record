@@ -45,6 +45,7 @@ function AllClear() {
     document.getElementById("input_win" + i).value = 0;
     document.getElementById("input_lose" + i).value = 0;
   }
+  document.getElementById("my_class").value = "エルフ";
   SaveLocalStorage();
   CalcRate();
 }
